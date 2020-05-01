@@ -29,12 +29,41 @@ namespace howest_movie_shop
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlite(
+                options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
-            services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+            services.AddDefaultIdentity<IdentityUser>(options => 
+                    {
+                        options.SignIn.RequireConfirmedAccount = true;
+
+                        // Require settings
+                        options.Password.RequireDigit = true; 
+                        options.Password.RequiredLength = 8; 
+                        options.Password.RequireNonAlphanumeric = false; 
+                        options.Password.RequireUppercase = true; 
+                        options.Password.RequireLowercase = false; 
+                        options.Password.RequiredUniqueChars = 6;
+
+                        // Lockout settings
+                        options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(30); 
+                        options.Lockout.MaxFailedAccessAttempts = 10; 
+                        options.Lockout.AllowedForNewUsers = true;
+                        // User settings
+                        options.User.RequireUniqueEmail = true;
+                        
+                    })
+                    .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddControllersWithViews();
            services.AddRazorPages();
+           services.AddAuthentication()
+        .AddGoogle(options =>
+        {
+            IConfigurationSection googleAuthNSection =
+                Configuration.GetSection("Authentication:Google");
+
+            options.ClientId = googleAuthNSection["ClientId"];
+            options.ClientSecret = googleAuthNSection["ClientSecret"];
+        });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
