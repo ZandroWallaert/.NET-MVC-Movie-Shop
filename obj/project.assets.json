@@ -2,16 +2,16 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v3.1": {
-      "howest_movie_lib/1.0.0": {
+      "howest_movie_lib/1.0.5": {
         "type": "package",
         "dependencies": {
           "Microsoft.EntityFrameworkCore.SqlServer": "3.1.3"
         },
         "compile": {
-          "lib/netstandard2.0/howest-movie-lib.dll": {}
+          "lib/netcoreapp3.1/howest-movie-lib.dll": {}
         },
         "runtime": {
-          "lib/netstandard2.0/howest-movie-lib.dll": {}
+          "lib/netcoreapp3.1/howest-movie-lib.dll": {}
         }
       },
       "Microsoft.AspNetCore.Authentication.Google/3.1.3": {
@@ -1013,7 +1013,7 @@
           "System.Xml.XDocument": "4.3.0"
         }
       },
-      "Newtonsoft.Json/12.0.2": {
+      "Newtonsoft.Json/12.0.3": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
@@ -2842,15 +2842,16 @@
     }
   },
   "libraries": {
-    "howest_movie_lib/1.0.0": {
-      "sha512": "gF2IGa7XqucHD1GVNw1JNkQKloYAhnW7kXLD2au8FRsUE5uKq3KLNzKkUT40JneXSiaVvOJRj4PktUP455+b5w==",
+    "howest_movie_lib/1.0.5": {
+      "sha512": "/Dw8aMBLLlnbyVvPXD8UU+MH3zxyr2bnT0QsJpBP/emj5HaG19VYMcg5i6QOr/eXGxHrwfUz+7MnbDJa12Vw5g==",
       "type": "package",
-      "path": "howest_movie_lib/1.0.0",
+      "path": "howest_movie_lib/1.0.5",
       "files": [
         ".nupkg.metadata",
-        "howest_movie_lib.1.0.0.nupkg.sha512",
+        "howest_movie_lib.1.0.5.nupkg.sha512",
         "howest_movie_lib.nuspec",
-        "lib/netstandard2.0/howest-movie-lib.dll"
+        "lib/netcoreapp3.1/howest-movie-lib.dll",
+        "lib/netcoreapp3.1/howest-movie-lib.runtimeconfig.json"
       ]
     },
     "Microsoft.AspNetCore.Authentication.Google/3.1.3": {
@@ -4446,10 +4447,10 @@
         "netstandard.library.nuspec"
       ]
     },
-    "Newtonsoft.Json/12.0.2": {
-      "sha512": "rTK0s2EKlfHsQsH6Yx2smvcTCeyoDNgCW7FEYyV01drPlh2T243PR2DiDXqtC5N4GDm4Ma/lkxfW5a/4793vbA==",
+    "Newtonsoft.Json/12.0.3": {
+      "sha512": "6mgjfnRB4jKMlzHSl+VD+oUc1IebOZabkbyWj2RiTgWwYPPuaK1H97G1sHqGwPlS5npiF5Q0OrxN1wni2n5QWg==",
       "type": "package",
-      "path": "newtonsoft.json/12.0.2",
+      "path": "newtonsoft.json/12.0.3",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -4472,8 +4473,9 @@
         "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.xml",
         "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.dll",
         "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.xml",
-        "newtonsoft.json.12.0.2.nupkg.sha512",
-        "newtonsoft.json.nuspec"
+        "newtonsoft.json.12.0.3.nupkg.sha512",
+        "newtonsoft.json.nuspec",
+        "packageIcon.png"
       ]
     },
     "NuGet.Frameworks/4.7.0": {
@@ -8994,7 +8996,8 @@
       "Microsoft.EntityFrameworkCore.Sqlite >= 3.1.2",
       "Microsoft.EntityFrameworkCore.Tools >= 3.1.2",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 3.1.2",
-      "howest_movie_lib >= 1.0.0"
+      "Newtonsoft.Json >= 12.0.3",
+      "howest_movie_lib >= 1.0.5"
     ]
   },
   "packageFolders": {
@@ -9071,9 +9074,13 @@
             "target": "Package",
             "version": "[3.1.2, )"
           },
+          "Newtonsoft.Json": {
+            "target": "Package",
+            "version": "[12.0.3, )"
+          },
           "howest_movie_lib": {
             "target": "Package",
-            "version": "[1.0.0, )"
+            "version": "[1.0.5, )"
           }
         },
         "imports": [

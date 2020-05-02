@@ -87,8 +87,6 @@ D:\Desktop\Howest Movie Shop\howest-movie-shop\obj\Debug\netcoreapp3.1\howest-mo
 D:\Desktop\Howest Movie Shop\howest-movie-shop\obj\Debug\netcoreapp3.1\howest-movie-shop.TagHelpers.output.cache
 D:\Desktop\Howest Movie Shop\howest-movie-shop\obj\Debug\netcoreapp3.1\howest-movie-shop.RazorCoreGenerate.cache
 D:\Desktop\Howest Movie Shop\howest-movie-shop\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ViewStart.cshtml.g.cs
-D:\Desktop\Howest Movie Shop\howest-movie-shop\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
-D:\Desktop\Howest Movie Shop\howest-movie-shop\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
 D:\Desktop\Howest Movie Shop\howest-movie-shop\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
 D:\Desktop\Howest Movie Shop\howest-movie-shop\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
 D:\Desktop\Howest Movie Shop\howest-movie-shop\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_LoginPartial.cshtml.g.cs
@@ -182,3 +180,5 @@ D:\Desktop\Howest Movie Shop\howest-movie-shop\obj\Debug\netcoreapp3.1\Razor\Are
 D:\Desktop\Howest Movie Shop\howest-movie-shop\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ValidationScriptsPartial.cshtml.g.cs
 D:\Desktop\Howest Movie Shop\howest-movie-shop\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ViewImports.cshtml.g.cs
 D:\Desktop\Howest Movie Shop\howest-movie-shop\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.Google.dll
+D:\Desktop\Howest Movie Shop\howest-movie-shop\obj\Debug\netcoreapp3.1\Razor\Views\Movie\Collection.cshtml.g.cs
+D:\Desktop\Howest Movie Shop\howest-movie-shop\obj\Debug\netcoreapp3.1\Razor\Views\Movie\Index.cshtml.g.cs

@@ -20531,11 +20531,6 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "d:\\Desktop\\Howest Movie Shop\\howest-movie-shop\\Views\\Home\\Index.cshtml",
-      "TargetPath": "Views\\Home\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "d:\\Desktop\\Howest Movie Shop\\howest-movie-shop\\Areas\\Identity\\Pages\\Account\\Logout.cshtml",
       "TargetPath": "Areas\\Identity\\Pages\\Account\\Logout.cshtml",
       "FileKind": "mvc"
@@ -20561,18 +20556,23 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "d:\\Desktop\\Howest Movie Shop\\howest-movie-shop\\Views\\Home\\Privacy.cshtml",
-      "TargetPath": "Views\\Home\\Privacy.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "d:\\Desktop\\Howest Movie Shop\\howest-movie-shop\\Views\\Shared\\_LoginPartial.cshtml",
       "TargetPath": "Views\\Shared\\_LoginPartial.cshtml",
       "FileKind": "mvc"
     },
     {
+      "FilePath": "d:\\Desktop\\Howest Movie Shop\\howest-movie-shop\\Views\\Movie\\Collection.cshtml",
+      "TargetPath": "Views\\Movie\\Collection.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "d:\\Desktop\\Howest Movie Shop\\howest-movie-shop\\Views\\Shared\\_Layout.cshtml",
       "TargetPath": "Views\\Shared\\_Layout.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\Desktop\\Howest Movie Shop\\howest-movie-shop\\Views\\Movie\\Index.cshtml",
+      "TargetPath": "Views\\Movie\\Index.cshtml",
       "FileKind": "mvc"
     },
     {

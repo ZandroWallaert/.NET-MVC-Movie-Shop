@@ -11,10 +11,10 @@
 </head>
 <body>
     <header>
-        <h1><a asp-controller="Home" asp-action="Index">howest movie shop</a></h1>
+        <h1><a asp-controller="Movie" asp-action="Index">howest movie shop</a></h1>
         <nav>
             <ul>
-                <li><a asp-controller="Home" asp-action="Privacy">Collection</a></li>
+                <li><a asp-controller="Movie" asp-action="Collection">Collection</a></li>
                 <partial name="_LoginPartial" />    
                 <li>
                     <a class="viewcart" href="/ShoppingCart"><span>0</span>view cart
@@ -40,9 +40,7 @@
     </div>
     <p>All images courtesy of flaticon</p>
     </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/site.js"></script>
     @RenderSection("Scripts", required: false)
 </body>
 </html>

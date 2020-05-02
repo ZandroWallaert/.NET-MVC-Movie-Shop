@@ -1,0 +1,70 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model howest_movie_shop.ViewModels.Movies.MoviesViewModel
+
+<main>
+    
+<section id="movieoftheday">
+    <a href="">
+    <h2>
+        Movie of the day
+    </h2>
+    <img src="/images/Into the Wild.jpg" alt="Into the Wild" title="Into the Wild">
+    <div>
+        <p><span>Each day we select a different movie for you to enjoy. 
+            The perfect start for the perfect evening.</span></p>
+        <p><span>Today's special pick is</span> <strong>Into the Wild</strong></p>
+    </div>
+    </a>
+    </section>
+    <aside>
+    <p><span>250</span> deliverable movies and counting!</p>
+    </aside>
+    <section id="collection">
+    <h2>Our collection of movies</h2>
+    <p>Browse our large selection of movies and have your favorite movie delivered to you at a moment 
+        of your choosing</p>
+    <p>Stay home, We care about your health.</p>
+    <form method="post" action="/Movie">
+        <button type="submit" class="order">Search</button>
+        <input type="search" 
+            name="SearchValue" 
+            id="SearchValue"/>
+        <label>Sort items by</label>
+            <select id="SortKey" name="SortKey">
+                        <option value="Title">Title</option>
+                        <option value="Year">Year</option>
+            </select>
+            <select id="SortOrder" name="SortOrder">
+                        <option value="asc">asc</option>
+                        <option value="desc">desc</option>
+            </select>
+    <input name="__RequestVerificationToken" type="hidden" value="CfDJ8HJnPNQk5rNIhHjl_m0Pjs6BmK1V4upO2FeVc6ZPeKAMLwluRIyHDdsyu9SR2-MbD2ygFZ8l7kVIdfHo2HezeCxWhtaz7WQHDhrlx5wpjpwDkf1JgEn3agniuoYo_Nc_JjFb4YG4qlvbMjNXZR9_5LLk9wsUW6ixC3zgTUZOHcJ_exyBDf2_ZkQvTk3WmOHV-Q" /></form>
+    <div class="flexcontainer">
+        @foreach (var item in Model.Movies) {
+            <article> 
+            <a href="">
+                <h3>Your Name.</h3>
+                <figure>
+                    <img src="/images/Your Name..jpg" 
+                        alt="Your Name." 
+                        title="Your Name.">
+                    <figcaption>
+                        Year: <span>2016</span>
+                    </figcaption>
+                </figure>
+            </a>
+            <form method="post" action="">
+                <div class="info">
+                    <p>€ <span>3.92</span>/pp</p>
+                    <input type="hidden" name="movieId" value="75"/>
+                    <input type="submit" 
+                        value="Order" 
+                        name="Order" 
+                        id="orderButton"/>
+                </div>
+            <input name="__RequestVerificationToken" type="hidden" value="CfDJ8HJnPNQk5rNIhHjl_m0Pjs6BmK1V4upO2FeVc6ZPeKAMLwluRIyHDdsyu9SR2-MbD2ygFZ8l7kVIdfHo2HezeCxWhtaz7WQHDhrlx5wpjpwDkf1JgEn3agniuoYo_Nc_JjFb4YG4qlvbMjNXZR9_5LLk9wsUW6ixC3zgTUZOHcJ_exyBDf2_ZkQvTk3WmOHV-Q" /></form>
+        </article>}
+</section>
+</main>

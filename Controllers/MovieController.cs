@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -8,29 +8,36 @@ using Microsoft.Extensions.Logging;
 using howest_movie_shop.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
-
+using howest_movie_shop.Library.Handlers;
 
 namespace howest_movie_shop.Controllers
 {
-    public class HomeController : Controller
+    [Route("")]
+    [Route("[controller]")]
+    public class MovieController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly ILogger<MovieController> _logger;
+        private MovieHandler movieHandler = new MovieHandler();
 
-        public HomeController(ILogger<HomeController> logger)
+        public MovieController(ILogger<MovieController> logger)
         {
             _logger = logger;
         }
 
+        [Route("")]
+        [Route("[action]")]
         public IActionResult Index()
         {
-            return View();
+            return View(movieHandler.CreateHomepage());
+            
         }
-
-        public IActionResult Privacy()
+        [Route("[action]")]
+        public IActionResult Collection()
         {
             return View();
         }
 
+        [Route("[action]")]
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
