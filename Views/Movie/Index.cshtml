@@ -10,11 +10,11 @@
     <h2>
         Movie of the day
     </h2>
-    <img src="/images/Into the Wild.jpg" alt="Into the Wild" title="Into the Wild">
+    <img src="~/images/@Model.RandomMovie.coverUrl" alt="@Model.RandomMovie.title" title="@Model.RandomMovie.title">
     <div>
         <p><span>Each day we select a different movie for you to enjoy. 
             The perfect start for the perfect evening.</span></p>
-        <p><span>Today's special pick is</span> <strong>Into the Wild</strong></p>
+        <p><span>Today's special pick is</span> <strong>@Model.RandomMovie.title</strong></p>
     </div>
     </a>
     </section>
@@ -44,21 +44,21 @@
     <div class="flexcontainer">
         @foreach (var item in Model.Movies) {
             <article> 
-            <a href="">
-                <h3>Your Name.</h3>
+            <a href="#">
+                <h3>@item.title</h3>
                 <figure>
-                    <img src="/images/Your Name..jpg" 
-                        alt="Your Name." 
-                        title="Your Name.">
+                    <img src="~/images/@item.coverUrl"
+                        alt="@item.title"
+                        title="@item.title">
                     <figcaption>
-                        Year: <span>2016</span>
+                        Year: <span>@item.year</span>
                     </figcaption>
                 </figure>
             </a>
             <form method="post" action="">
                 <div class="info">
                     <p>€ <span>3.92</span>/pp</p>
-                    <input type="hidden" name="movieId" value="75"/>
+                    <input type="hidden" name="movieId" value="@item.id"/>
                     <input type="submit" 
                         value="Order" 
                         name="Order" 
