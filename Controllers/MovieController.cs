@@ -9,6 +9,7 @@ using howest_movie_shop.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using howest_movie_shop.Library.Handlers;
+using howest_movie_shop.ViewModels.Movies;
 
 namespace howest_movie_shop.Controllers
 {
@@ -25,12 +26,18 @@ namespace howest_movie_shop.Controllers
         }
 
         [Route("")]
-        [Route("[action]")]
         public IActionResult Index()
         {
             return View(movieHandler.CreateHomepage());
-            
+
         }
+
+        [Route("[action]")]
+        public IActionResult Index(string searchString, string sortKey, string sortOrder)
+        {
+            return View(movieHandler.CreateSearch(searchString, sortKey, sortOrder));
+        }
+
         [Route("[action]")]
         public IActionResult Collection()
         {
@@ -44,34 +51,34 @@ namespace howest_movie_shop.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
 
-            /*
-        [AllowAnonymous]-attribute has a higher priority then the [Authorize]-attributes.
+        /*
+    [AllowAnonymous]-attribute has a higher priority then the [Authorize]-attributes.
 
-        A controller with the [AllowAnonymous] attribute, 
-        but with a [Authorized] attributes on a method => the [Authorize] attribute will be ignored.
-        */
+    A controller with the [AllowAnonymous] attribute, 
+    but with a [Authorized] attributes on a method => the [Authorize] attribute will be ignored.
+    */
 
-/* 
-        private readonly UserManager<IdentityUser> userManager;
+        /* 
+                private readonly UserManager<IdentityUser> userManager;
 
 
-        [Authorize(Roles = "Admin")]
-        public IActionResult DoAnAuthorizeAdminThing()
-        {
-            //...
-            return View();
-        }
+                [Authorize(Roles = "Admin")]
+                public IActionResult DoAnAuthorizeAdminThing()
+                {
+                    //...
+                    return View();
+                }
 
-        [Authorize(Roles = "Member")]
-        public async Task<IActionResult> DoAnAuthorizeRolesThing()
-        {
-            //...
-            // - get current user (need to be used in an async Task<IActionResult> method, with an await)
-            var user = await userManager.GetUserAsync(HttpContext.User);
-            //...
+                [Authorize(Roles = "Member")]
+                public async Task<IActionResult> DoAnAuthorizeRolesThing()
+                {
+                    //...
+                    // - get current user (need to be used in an async Task<IActionResult> method, with an await)
+                    var user = await userManager.GetUserAsync(HttpContext.User);
+                    //...
 
-            return View();
-        } */
+                    return View();
+                } */
 
     }
 }

@@ -26,17 +26,15 @@
     <p>Browse our large selection of movies and have your favorite movie delivered to you at a moment 
         of your choosing</p>
     <p>Stay home, We care about your health.</p>
-    <form method="post" action="/Movie">
-        <button type="submit" class="order">Search</button>
-        <input type="search" 
-            name="SearchValue" 
-            id="SearchValue"/>
+    <form asp-controller="Movie" asp-action="Index">
+        <button class="order" type="submit" value="Search">Search</button>
+        <input id="SearchValue" type="search" name="searchString" />
         <label>Sort items by</label>
-            <select id="SortKey" name="SortKey">
-                        <option value="Title">Title</option>
-                        <option value="Year">Year</option>
+            <select id="SortKey" name="sortKey">
+                        <option value="title">Title</option>
+                        <option value="year">Year</option>
             </select>
-            <select id="SortOrder" name="SortOrder">
+            <select id="SortOrder" name="sortOrder">
                         <option value="asc">asc</option>
                         <option value="desc">desc</option>
             </select>
