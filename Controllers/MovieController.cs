@@ -31,7 +31,8 @@ namespace howest_movie_shop.Controllers
             return View(movieHandler.CreateHomepage());
 
         }
-
+        
+        [HttpPost]
         [Route("[action]")]
         public IActionResult Index(string searchString, string sortKey, string sortOrder)
         {
