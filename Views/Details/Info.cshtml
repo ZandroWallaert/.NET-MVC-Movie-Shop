@@ -1,0 +1,37 @@
+@{
+    ViewData["Title"] = "";
+}
+@model howest_movie_shop.ViewModels.Movies.DetailViewModel
+
+<main>
+    
+<section id="moviedetails">
+    <img src="~/images/@Model.coverUrl" alt="@Model.title" title="@Model.title">
+    <div>
+    <h2>
+        @Model.title
+    </h2>
+    <div>
+        <form method="post" action="">
+            <div class="info">
+                <input type="hidden" name="movieId" value="@Model.movieId"/>
+                <input type="submit" 
+                    value="Order" 
+                    name="Order" 
+                    id="orderButton"/>
+            </div></form>
+        <br/>
+        <p><span>Rating <strong>@Model.rating</strong></span></p>
+        <p><span>Genre <strong>@Model.genre</strong></span></p>
+        <p><span>Year <strong>@Model.year</strong></span></p>
+        <p><span>Plot <strong>@Model.plot</strong></span></p>
+        <p><span>Actors: 
+            @foreach (string item in @Model.Actors) {
+                <strong>@item</strong>
+            }
+            </span></p>
+    </div>
+</section>
+
+
+</main>

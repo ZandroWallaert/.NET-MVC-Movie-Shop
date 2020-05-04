@@ -81,7 +81,7 @@
             },
             "howest_movie_lib": {
               "target": "Package",
-              "version": "[1.0.5, )"
+              "version": "[1.0.8, )"
             }
           },
           "imports": [

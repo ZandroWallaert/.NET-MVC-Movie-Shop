@@ -182,3 +182,4 @@ D:\Desktop\Howest Movie Shop\howest-movie-shop\obj\Debug\netcoreapp3.1\Razor\Are
 D:\Desktop\Howest Movie Shop\howest-movie-shop\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.Google.dll
 D:\Desktop\Howest Movie Shop\howest-movie-shop\obj\Debug\netcoreapp3.1\Razor\Views\Movie\Collection.cshtml.g.cs
 D:\Desktop\Howest Movie Shop\howest-movie-shop\obj\Debug\netcoreapp3.1\Razor\Views\Movie\Index.cshtml.g.cs
+D:\Desktop\Howest Movie Shop\howest-movie-shop\obj\Debug\netcoreapp3.1\Razor\Views\Details\Info.cshtml.g.cs

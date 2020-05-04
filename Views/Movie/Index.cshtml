@@ -6,7 +6,7 @@
 <main>
     
 <section id="movieoftheday">
-    <a href="">
+    <a name="movieId" value="@Model.RandomMovie.id" asp-route-movieId="@Model.RandomMovie.id" asp-controller="Details" asp-action="Info">
     <h2>
         Movie of the day
     </h2>
@@ -42,7 +42,7 @@
     <div class="flexcontainer">
         @foreach (var item in Model.Movies) {
             <article> 
-            <a href="#">
+            <a name="movieId" value="@item.id" asp-controller="Details" asp-action="Info">
                 <h3>@item.title</h3>
                 <figure>
                     <img src="~/images/@item.coverUrl"
