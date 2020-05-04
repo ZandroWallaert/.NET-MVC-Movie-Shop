@@ -16,10 +16,13 @@
             <ul>
                 <li><a asp-controller="Movie" asp-action="">Collection</a></li>
                 <partial name="_LoginPartial" />    
-                <li>
-                    <a class="viewcart" href="/ShoppingCart"><span>0</span>view cart
+                @if (ViewBag.ShowCart ?? true)
+                {
+                    <li>
+                    <a class="viewcart" asp-controller="Order" asp-action="ShoppingCart"><span>0</span>view cart
                     </a>
-             </li>
+                    </li>
+                } 
         </ul>
         </nav>
     </header>

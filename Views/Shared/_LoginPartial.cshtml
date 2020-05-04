@@ -6,7 +6,7 @@
 {
     <li>
     <a  asp-area="Identity" asp-page="/Account/Manage/Index" id="manage" class="nav-link text-dark" title="Manage">Hello @User.Identity.Name!</a> |
-    <form id="logoutForm" class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+    <form id="logoutForm" class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "", new { area = "" })">
             <button  type="submit" class="nav-link btn btn-link text-dark">Logout</button>
     </form></li>
 }

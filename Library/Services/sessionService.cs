@@ -8,6 +8,7 @@ namespace Library.Services
 {
     public class SessionService
     {
+        
     /* private List<string> StoreSearchQuery(string query)
     {
         // Add the search string to the session state to remember it.

@@ -20541,6 +20541,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "d:\\Desktop\\Howest Movie Shop\\howest-movie-shop\\Views\\ShoppingCart\\Ticket.cshtml",
+      "TargetPath": "Views\\ShoppingCart\\Ticket.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "d:\\Desktop\\Howest Movie Shop\\howest-movie-shop\\Areas\\Identity\\Pages\\Account\\_ViewImports.cshtml",
       "TargetPath": "Areas\\Identity\\Pages\\Account\\_ViewImports.cshtml",
       "FileKind": "mvc"
@@ -20548,6 +20553,11 @@
     {
       "FilePath": "d:\\Desktop\\Howest Movie Shop\\howest-movie-shop\\Areas\\Identity\\Pages\\Account\\Login.cshtml",
       "TargetPath": "Areas\\Identity\\Pages\\Account\\Login.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\Desktop\\Howest Movie Shop\\howest-movie-shop\\Views\\ShoppingCart\\Checkout.cshtml",
+      "TargetPath": "Views\\ShoppingCart\\Checkout.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -20568,6 +20578,11 @@
     {
       "FilePath": "d:\\Desktop\\Howest Movie Shop\\howest-movie-shop\\Views\\Movie\\Index.cshtml",
       "TargetPath": "Views\\Movie\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\Desktop\\Howest Movie Shop\\howest-movie-shop\\Views\\Order\\Shoppingcart.cshtml",
+      "TargetPath": "Views\\Order\\Shoppingcart.cshtml",
       "FileKind": "mvc"
     },
     {

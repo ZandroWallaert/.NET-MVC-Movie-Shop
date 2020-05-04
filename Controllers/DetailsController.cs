@@ -30,6 +30,10 @@ namespace howest_movie_shop.Controllers
         {
             return View(detailHandler.CreateInfoPage(movieId));
         }
+
+
+
+
     }
 
 
