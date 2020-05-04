@@ -109,6 +109,9 @@ namespace howest_movie_shop
         //  -- AuthSeeder
         AuthSeeder authSeeder = new AuthSeeder(serviceProvider);
         authSeeder.Run();
+        // MoviePriceSeeder
+        // MoviePriceSeeder moviePriceSeeder = new MoviePriceSeeder(serviceProvider);
+        // moviePriceSeeder.Run();
 }  
     }
 }

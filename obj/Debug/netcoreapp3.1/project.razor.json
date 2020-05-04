@@ -20561,11 +20561,6 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "d:\\Desktop\\Howest Movie Shop\\howest-movie-shop\\Views\\Movie\\Collection.cshtml",
-      "TargetPath": "Views\\Movie\\Collection.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "d:\\Desktop\\Howest Movie Shop\\howest-movie-shop\\Views\\Shared\\_Layout.cshtml",
       "TargetPath": "Views\\Shared\\_Layout.cshtml",
       "FileKind": "mvc"

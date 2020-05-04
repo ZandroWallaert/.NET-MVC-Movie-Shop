@@ -42,7 +42,7 @@
     <div class="flexcontainer">
         @foreach (var item in Model.Movies) {
             <article> 
-            <a name="movieId" value="@item.id" asp-controller="Details" asp-action="Info">
+            <a name="movieId" value="@item.id" asp-route-movieId="@item.id" asp-controller="Details" asp-action="Info">
                 <h3>@item.title</h3>
                 <figure>
                     <img src="~/images/@item.coverUrl"
