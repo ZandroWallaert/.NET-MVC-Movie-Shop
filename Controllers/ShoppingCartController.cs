@@ -17,7 +17,13 @@ namespace howest_movie_shop.Controllers
     [Route("[controller]")]
     public class ShoppingCartController : Controller
     {
-        [Route("ShoppingCart")]
+        [Route("Shoppingcart")]
+        public IActionResult Shoppingcart()
+        {
+            return View();
+        }
+
+        [Route("Checkout")]
         public IActionResult Checkout()
         {
             ViewBag.ShowCart = false;

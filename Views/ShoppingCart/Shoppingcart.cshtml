@@ -39,11 +39,11 @@
     @if(Context.User.Identity.IsAuthenticated){
     if(User.IsInRole("Admin"))
     {
-     <a class="order" asp-controller="ShoppingCart" asp-action="ShoppingCart">Proceed to checkout</a>
+     <a class="order" asp-controller="ShoppingCart" asp-action="Checkout">Proceed to checkout</a>
     }
      if(User.IsInRole("Member"))
     {
-     <a class="order" asp-controller="ShoppingCart" asp-action="ShoppingCart">Proceed to checkout</a>
+     <a class="order" asp-controller="ShoppingCart" asp-action="Checkout">Proceed to checkout</a>
     }
     }
     @* For unknown user *@

@@ -88,7 +88,6 @@ D:\Desktop\Howest Movie Shop\howest-movie-shop\obj\Debug\netcoreapp3.1\howest-mo
 D:\Desktop\Howest Movie Shop\howest-movie-shop\obj\Debug\netcoreapp3.1\howest-movie-shop.RazorCoreGenerate.cache
 D:\Desktop\Howest Movie Shop\howest-movie-shop\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ViewStart.cshtml.g.cs
 D:\Desktop\Howest Movie Shop\howest-movie-shop\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
-D:\Desktop\Howest Movie Shop\howest-movie-shop\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
 D:\Desktop\Howest Movie Shop\howest-movie-shop\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_LoginPartial.cshtml.g.cs
 D:\Desktop\Howest Movie Shop\howest-movie-shop\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
 D:\Desktop\Howest Movie Shop\howest-movie-shop\obj\Debug\netcoreapp3.1\Razor\Views\_ViewImports.cshtml.g.cs
@@ -183,5 +182,7 @@ D:\Desktop\Howest Movie Shop\howest-movie-shop\bin\Debug\netcoreapp3.1\Microsoft
 D:\Desktop\Howest Movie Shop\howest-movie-shop\obj\Debug\netcoreapp3.1\Razor\Views\Movie\Index.cshtml.g.cs
 D:\Desktop\Howest Movie Shop\howest-movie-shop\obj\Debug\netcoreapp3.1\Razor\Views\Details\Info.cshtml.g.cs
 D:\Desktop\Howest Movie Shop\howest-movie-shop\obj\Debug\netcoreapp3.1\Razor\Views\ShoppingCart\Checkout.cshtml.g.cs
-D:\Desktop\Howest Movie Shop\howest-movie-shop\obj\Debug\netcoreapp3.1\Razor\Views\Order\Shoppingcart.cshtml.g.cs
 D:\Desktop\Howest Movie Shop\howest-movie-shop\obj\Debug\netcoreapp3.1\Razor\Views\ShoppingCart\Ticket.cshtml.g.cs
+D:\Desktop\Howest Movie Shop\howest-movie-shop\obj\Debug\netcoreapp3.1\Razor\Views\Order\Orders.cshtml.g.cs
+D:\Desktop\Howest Movie Shop\howest-movie-shop\obj\Debug\netcoreapp3.1\Razor\Views\Shared\LayoutShop.cshtml.g.cs
+D:\Desktop\Howest Movie Shop\howest-movie-shop\obj\Debug\netcoreapp3.1\Razor\Views\ShoppingCart\Shoppingcart.cshtml.g.cs

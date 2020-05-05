@@ -14,12 +14,16 @@
         <h1><a asp-controller="Movie" asp-action="">howest movie shop</a></h1>
         <nav>
             <ul>
+                @if(Context.User.Identity.IsAuthenticated){
+                if(User.IsInRole("Admin"))
+                {
+                <li><a asp-controller="Order" asp-action="Order">Orders</a></li>}}
                 <li><a asp-controller="Movie" asp-action="">Collection</a></li>
                 <partial name="_LoginPartial" />    
                 @if (ViewBag.ShowCart ?? true)
                 {
                     <li>
-                    <a class="viewcart" asp-controller="Order" asp-action="ShoppingCart"><span>0</span>view cart
+                    <a class="viewcart" asp-controller="ShoppingCart" asp-action="Shoppingcart"><span>0</span>view cart
                     </a>
                     </li>
                 } 

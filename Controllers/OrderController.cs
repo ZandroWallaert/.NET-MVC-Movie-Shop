@@ -17,8 +17,8 @@ namespace howest_movie_shop.Controllers
     [Route("[controller]")]
     public class OrderController : Controller
     {
-        [Route("ShoppingCart")]
-        public IActionResult Shoppingcart()
+        [Route("Order")]
+        public IActionResult Orders()
         {
             return View();
         }
