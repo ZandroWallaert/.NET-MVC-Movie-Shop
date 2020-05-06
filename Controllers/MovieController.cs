@@ -10,6 +10,11 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using howest_movie_shop.Library.Handlers;
 using howest_movie_shop.ViewModels.Movies;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Session;
+using System.Text.Json;
+using Library.Services;
+using howest_movie_lib.Library.Models;
 
 namespace howest_movie_shop.Controllers
 {
@@ -19,6 +24,7 @@ namespace howest_movie_shop.Controllers
     {
         private readonly ILogger<MovieController> _logger;
         private MovieHandler movieHandler = new MovieHandler();
+        private SessionService service = new SessionService();
 
         public MovieController(ILogger<MovieController> logger)
         {
@@ -28,7 +34,15 @@ namespace howest_movie_shop.Controllers
         [Route("")]
         public IActionResult Index()
         {
-            return View(movieHandler.CreateHomepage());
+            HttpContext.Session.SetString("Movies", JsonSerializer.Serialize(service.AllMovies()));
+            string movies = HttpContext.Session.GetString("Movies");
+            List<Movies> movieList = JsonSerializer.Deserialize<List<Movies>>(movies);
+
+            HttpContext.Session.SetString("RandomMovie", JsonSerializer.Serialize(service.GetRandomMovie()));
+            string randomMovie = HttpContext.Session.GetString("RandomMovie");
+            List<Movies> randomMovieList = JsonSerializer.Deserialize<List<Movies>>(randomMovie);
+
+            return View(movieHandler.CreateHomepage(movieList, randomMovieList));
 
         }
         
@@ -36,7 +50,9 @@ namespace howest_movie_shop.Controllers
         [Route("[action]")]
         public IActionResult Index(string searchString, string sortKey, string sortOrder)
         {
-            return View(movieHandler.CreateSearch(searchString, sortKey, sortOrder));
+            string movies = HttpContext.Session.GetString("Movies");
+            List<Movies> movieList = JsonSerializer.Deserialize<List<Movies>>(movies);
+            return View(movieHandler.CreateSearch(searchString, sortKey, sortOrder, movieList));
         }
 
         [Route("[action]")]
@@ -52,34 +68,36 @@ namespace howest_movie_shop.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
 
-        /*
-    [AllowAnonymous]-attribute has a higher priority then the [Authorize]-attributes.
+        private List<string> StoreSearchQuery(string query)
+    {
+        // Add the search string to the session state to remember it.
+        List<string> previousQueries = GetPreviousQueries();
 
-    A controller with the [AllowAnonymous] attribute, 
-    but with a [Authorized] attributes on a method => the [Authorize] attribute will be ignored.
-    */
+        if (!previousQueries.Contains(query))
+        {
+            previousQueries.Add(query);
+        }
 
-        /* 
-                private readonly UserManager<IdentityUser> userManager;
+        // Overwrite the current searchQueries with the new results.
+        HttpContext.Session.SetString("searchQueries", JsonSerializer.Serialize(previousQueries));
 
+        return previousQueries;
+    }
+  
+    private List<string> GetPreviousQueries()
+    {
+        // Get the raw json from the session store.
+        string previousQueriesJson = HttpContext.Session.GetString("searchQueries");
+        List<string> previousQueries = new List<string>();
 
-                [Authorize(Roles = "Admin")]
-                public IActionResult DoAnAuthorizeAdminThing()
-                {
-                    //...
-                    return View();
-                }
+        if (!string.IsNullOrEmpty(previousQueriesJson))
+        {
+            // When the searchQueries key is available deserialize into a list of strings.
+            previousQueries = JsonSerializer.Deserialize<List<string>>(previousQueriesJson);
+        }
 
-                [Authorize(Roles = "Member")]
-                public async Task<IActionResult> DoAnAuthorizeRolesThing()
-                {
-                    //...
-                    // - get current user (need to be used in an async Task<IActionResult> method, with an await)
-                    var user = await userManager.GetUserAsync(HttpContext.User);
-                    //...
-
-                    return View();
-                } */
+        return previousQueries;
+    } 
 
     }
 }
