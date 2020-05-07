@@ -10,14 +10,15 @@ namespace howest_movie_shop.Library.Handlers
 {
     public class DetailsHandler
     {
-        private MovieService movieService = new MovieService();
         private DetailService detailService = new DetailService();
         private GenreService genreService = new GenreService();
         List<String> actors = new List<string>();
+        private IEnumerable<Movies> moviesIE;
 
-        public DetailViewModel CreateInfoPage(long movieId)
+        public DetailViewModel CreateInfoPage(long movieId, List<Movies> movies)
         {
-            foreach (var movie in movieService.AllMovies().Where(s => s.Id == movieId))
+            moviesIE = movies;
+            foreach (var movie in moviesIE.Where(s => s.Id == movieId))
             {
                 DetailViewModel page = new DetailViewModel
                 {

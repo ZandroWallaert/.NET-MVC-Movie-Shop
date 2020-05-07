@@ -31,12 +31,12 @@
         <input id="SearchValue" type="search" name="searchString" />
         <label>Sort items by</label>
             <select id="SortKey" name="sortKey">
-                        <option value="title">Title</option>
-                        <option value="year">Year</option>
+                        <option value="@Model.SortKey[0]">@Model.SortKey[0]</option>
+                        <option value="@Model.SortKey[1]">@Model.SortKey[1]</option>
             </select>
             <select id="SortOrder" name="sortOrder">
-                        <option value="asc">asc</option>
-                        <option value="desc">desc</option>
+                        <option value="@Model.SortOrder[0]">@Model.SortOrder[0]</option>
+                        <option value="@Model.SortOrder[1]">@Model.SortOrder[1]</option>
             </select>
     <input name="__RequestVerificationToken" type="hidden" value="CfDJ8HJnPNQk5rNIhHjl_m0Pjs6BmK1V4upO2FeVc6ZPeKAMLwluRIyHDdsyu9SR2-MbD2ygFZ8l7kVIdfHo2HezeCxWhtaz7WQHDhrlx5wpjpwDkf1JgEn3agniuoYo_Nc_JjFb4YG4qlvbMjNXZR9_5LLk9wsUW6ixC3zgTUZOHcJ_exyBDf2_ZkQvTk3WmOHV-Q" /></form>
     <div class="flexcontainer">

@@ -10,8 +10,9 @@ namespace howest_movie_shop.ViewModels.Movies {
         public MovieViewModel RandomMovie { get; internal set; }
         public List<MovieViewModel> Movies { get; internal set; }
         public List<string> Queries { get; internal set; }
-        public string Search { get; internal set; }
         public Int32 Count { get; internal set; }
+        public List<string> SortKey { get; set;}
+        public List<string> SortOrder { get; set;}
     }
 
 }

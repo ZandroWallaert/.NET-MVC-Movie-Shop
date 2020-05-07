@@ -52,7 +52,9 @@ namespace howest_movie_shop.Controllers
         {
             string movies = HttpContext.Session.GetString("Movies");
             List<Movies> movieList = JsonSerializer.Deserialize<List<Movies>>(movies);
-            return View(movieHandler.CreateSearch(searchString, sortKey, sortOrder, movieList));
+            string randomMovie = HttpContext.Session.GetString("RandomMovie");
+            List<Movies> randomMovieList = JsonSerializer.Deserialize<List<Movies>>(randomMovie);
+            return View(movieHandler.CreateSearch(searchString, sortKey, sortOrder, movieList, randomMovieList));
         }
 
         [Route("[action]")]

@@ -10,6 +10,11 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using howest_movie_shop.Library.Handlers;
 using howest_movie_shop.ViewModels.Movies;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Session;
+using System.Text.Json;
+using Library.Services;
+using howest_movie_lib.Library.Models;
 
 namespace howest_movie_shop.Controllers
 {
@@ -28,7 +33,9 @@ namespace howest_movie_shop.Controllers
         [Route("Details/{movieId}")]
         public IActionResult Info(long movieId)
         {
-            return View(detailHandler.CreateInfoPage(movieId));
+            string movies = HttpContext.Session.GetString("Movies");
+            List<Movies> movieList = JsonSerializer.Deserialize<List<Movies>>(movies);
+            return View(detailHandler.CreateInfoPage(movieId, movieList));
         }
 
 

@@ -2,7 +2,7 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v3.1": {
-      "howest_movie_lib/1.0.17": {
+      "howest_movie_lib/1.0.18": {
         "type": "package",
         "dependencies": {
           "Microsoft.EntityFrameworkCore.SqlServer": "3.1.3"
@@ -2842,13 +2842,13 @@
     }
   },
   "libraries": {
-    "howest_movie_lib/1.0.17": {
-      "sha512": "4l0wNjnj+7PpvIIeVUAJuJPflBI8YsMzEhHfkWvKs86qzeTbuSweGJo4HEedXKi4mMW5aCP/sdC9j6WT8aQ0MQ==",
+    "howest_movie_lib/1.0.18": {
+      "sha512": "+5T1ya1RGiqvsN0qiifmTDd/ZMEWWgMKT/C+gIlSzqhMmmkvxAjZ5jL76nlBG/bfWSewx+gg+QJa2hfiNcp0CQ==",
       "type": "package",
-      "path": "howest_movie_lib/1.0.17",
+      "path": "howest_movie_lib/1.0.18",
       "files": [
         ".nupkg.metadata",
-        "howest_movie_lib.1.0.17.nupkg.sha512",
+        "howest_movie_lib.1.0.18.nupkg.sha512",
         "howest_movie_lib.nuspec",
         "lib/netcoreapp3.1/howest-movie-lib.dll",
         "lib/netcoreapp3.1/howest-movie-lib.runtimeconfig.json"
@@ -8997,7 +8997,7 @@
       "Microsoft.EntityFrameworkCore.Tools >= 3.1.2",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 3.1.2",
       "Newtonsoft.Json >= 12.0.3",
-      "howest_movie_lib >= 1.0.17"
+      "howest_movie_lib >= 1.0.18"
     ]
   },
   "packageFolders": {
@@ -9080,7 +9080,7 @@
           },
           "howest_movie_lib": {
             "target": "Package",
-            "version": "[1.0.17, )"
+            "version": "[1.0.18, )"
           }
         },
         "imports": [
