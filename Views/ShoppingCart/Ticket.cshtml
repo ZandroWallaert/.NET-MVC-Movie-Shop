@@ -1,6 +1,7 @@
+@model howest_movie_shop.ViewModels.Movies.TicketViewModel
 <main>
-    <h1>Thank you USER for your order</h1>
-    <p>Your order will be paid with PAYMENT.</p>
+    <h1>Thank you @Model.Fullname for your order</h1>
+    <p>Your order will be paid with @Model.Paymentmethod.</p>
     <p>We will ship your movies upon paymentconfirmation.</p>
     <p>~~</p>
     <a asp-controller="Movie" asp-action="">Home</a>

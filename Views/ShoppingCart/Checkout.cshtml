@@ -9,21 +9,21 @@
         <div class="text-danger validation-summary-valid" data-valmsg-summary="true"><ul><li style="display:none"></li>
 </ul></div>
         <br/>
-        <form method="POST" action="/ShoppingCart">
+        <form method="POST">
             <label for="Name">Full name:</label>
-            <input id="Name" name="Name" type="text" value="matthiasblomme@gmail.com"/>
+            <input id="Name" name="Name" type="text" value="Ex. Zandro Wallaert"/>
 
             <label for="Street">Street:</label>
-            <textarea id="Street" name="Street">sqdf</textarea>
+            <textarea id="Street" name="Street">Ex. Grovestreet</textarea>
 
             <label for="City">City:</label>
-            <textarea id="City" name="City">qsdf</textarea>
+            <textarea id="City" name="City">Ex. Brugge</textarea>
 
             <label for="PostalCode">Postal code:</label>
-            <textarea id="PostalCode" name="PostalCode">qsdf</textarea>
+            <textarea id="PostalCode" name="PostalCode">Ex. 8000</textarea>
 
             <label for="Country">Country:</label>
-            <textarea id="Country" name="Country">qsf</textarea>
+            <textarea id="Country" name="Country">Ex. Belgium</textarea>
 
             <label>Payment method:</label>
             <input checked type="radio" name="PaymentMethod" id="payment-card" value="card"/><label
@@ -34,7 +34,7 @@
             bars</label>
             <input type="radio" name="PaymentMethod" id="payment-kind" value="in_kind"/><label for="payment-kind">In
             kind</label>
-            <input type="submit" value="confirm order" class="order" asp-controller="ShoppingCart" asp-action="Ticket"/></form>
+            <input type="submit" value="confirm order" class="order" asp-route-name="#name.value" asp-controller="ShoppingCart" asp-action="Ticket"/></form>
     </div>
     </section>
 </main>

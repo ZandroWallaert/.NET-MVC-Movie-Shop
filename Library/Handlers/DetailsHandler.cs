@@ -11,8 +11,6 @@ namespace howest_movie_shop.Library.Handlers
     public class DetailsHandler
     {
         private DetailService detailService = new DetailService();
-        private GenreService genreService = new GenreService();
-        List<String> actors = new List<string>();
         private IEnumerable<Movies> moviesIE;
 
         public DetailViewModel CreateInfoPage(long movieId, List<Movies> movies, int counter)

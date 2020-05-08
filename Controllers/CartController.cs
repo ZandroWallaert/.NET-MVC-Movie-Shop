@@ -22,7 +22,7 @@ namespace howest_movie_shop.Controllers
         {
             ViewBag.ShowCart = true;
             string cartString = HttpContext.Session.GetString("Cart");
-            if (cartString == null)
+            if (cartString == null || HttpContext.Session.GetString("Cart") == "")
             {
                 List<OrderViewModel> cart = new List<OrderViewModel>();
                 return View(orderHandler.CreateOrderPage(cart));
@@ -36,7 +36,7 @@ namespace howest_movie_shop.Controllers
 
         public ActionResult Buy(long id)
         {
-            if (HttpContext.Session.GetString("Cart") == null)
+            if (HttpContext.Session.GetString("Cart") == null || HttpContext.Session.GetString("Cart") == "")
             {
                 List<OrderViewModel> cart = new List<OrderViewModel>();
                 cart.Add(new OrderViewModel
@@ -51,13 +51,12 @@ namespace howest_movie_shop.Controllers
             {
                 string cartStr = HttpContext.Session.GetString("Cart");
                 List<OrderViewModel> cart = JsonSerializer.Deserialize<List<OrderViewModel>>(cartStr);
-                int index = isExist(id);
-                if (index != -1)
+                if (Exist(id))
                 {
-                    cart[index].Quantity++;
+                    return RedirectToAction("Shoppingcart");
                 }
                 else
-                {
+                { 
                     cart.Add(new OrderViewModel
                     {
                         Movie = service.AllMovies().Where(s => s.Id.Equals(id)),
@@ -70,7 +69,7 @@ namespace howest_movie_shop.Controllers
             return RedirectToAction("Shoppingcart");
         }
 
-        public ActionResult Remove(long id)
+        /* public ActionResult Remove(long id)
         {
             string cartStr = HttpContext.Session.GetString("Cart");
             List<MoviesViewModel> cart = JsonSerializer.Deserialize<List<MoviesViewModel>>(cartStr);
@@ -78,18 +77,19 @@ namespace howest_movie_shop.Controllers
             cart.RemoveAt(index);
             HttpContext.Session.SetString("Cart", JsonSerializer.Serialize(cart));
             return RedirectToAction("Shoppingcart");
-        }
+        } */
 
-        private int isExist(long id)
+        private bool Exist(long id)
         {
             string cartStr = HttpContext.Session.GetString("Cart");
-            List<MoviesViewModel> cart = JsonSerializer.Deserialize<List<MoviesViewModel>>(cartStr);
-            for (int i = 0; i < cart.Count; i++)
-                if (cart[i].id.Equals(id))
-                    return i;
-            return -1;
+            string idStr = ":"+id.ToString()+",";
+            if (cartStr.Contains(idStr)) {
+                return true;
+            }
+            else {
+                return false;
+            }
         }
-
     }
 
 }
