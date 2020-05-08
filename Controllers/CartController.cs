@@ -24,6 +24,7 @@ namespace howest_movie_shop.Controllers
             string cartString = HttpContext.Session.GetString("Cart");
             if (cartString == null || HttpContext.Session.GetString("Cart") == "")
             {
+                ViewBag.ShowDefaultInfo = true;
                 List<OrderViewModel> cart = new List<OrderViewModel>();
                 return View(orderHandler.CreateOrderPage(cart));
             }
@@ -53,7 +54,7 @@ namespace howest_movie_shop.Controllers
                 List<OrderViewModel> cart = JsonSerializer.Deserialize<List<OrderViewModel>>(cartStr);
                 if (Exist(id))
                 {
-                    return RedirectToAction("Shoppingcart");
+                    return RedirectToAction("", "Movie");
                 }
                 else
                 { 
@@ -66,7 +67,7 @@ namespace howest_movie_shop.Controllers
                 HttpContext.Session.SetString("Cart", JsonSerializer.Serialize(cart));
                 HttpContext.Session.SetInt32("CartCounter", cart.Count());
             }
-            return RedirectToAction("Shoppingcart");
+            return RedirectToAction("", "Movie");
         }
 
         /* public ActionResult Remove(long id)

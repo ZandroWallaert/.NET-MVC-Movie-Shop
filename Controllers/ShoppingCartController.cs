@@ -18,8 +18,7 @@ using howest_movie_lib.Library.Models;
 
 namespace howest_movie_shop.Controllers
 {
-    [Route("")]
-    [Route("[controller]")]
+    
     public class ShoppingCartController : Controller
     {
         private TicketHandler ticketHandler = new TicketHandler();
@@ -36,7 +35,7 @@ namespace howest_movie_shop.Controllers
         {
             return View();
         }
-
+        
         [HttpPost]
         [Route("Ticket")]
         public IActionResult Ticket(string name)

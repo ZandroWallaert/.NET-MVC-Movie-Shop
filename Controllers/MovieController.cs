@@ -80,7 +80,7 @@ namespace howest_movie_shop.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
 
-        private List<string> StoreSearchQuery(string query)
+      /*   private List<string> StoreSearchQuery(string query)
     {
         // Add the search string to the session state to remember it.
         List<string> previousQueries = GetPreviousQueries();
@@ -109,7 +109,7 @@ namespace howest_movie_shop.Controllers
         }
 
         return previousQueries;
-    } 
+    }  */
 
     }
 }

@@ -16,6 +16,11 @@
                 </tr>
                 </thead>
                 <tbody>
+                    @if (ViewBag.ShowDefaultInfo ?? false)
+                {
+                    <p>Please order something to continue</p>
+                    <a asp-controller="Movie" asp-action="">Home</a>
+                }
                     @foreach (var item in Model.Movies)
                     {
                         <tr>
@@ -35,19 +40,13 @@
                 </tfoot>
             </table>
         </div>
-    @if(Context.User.Identity.IsAuthenticated){
-    if(User.IsInRole("Admin"))
-    {
-     <a class="order" asp-controller="ShoppingCart" asp-action="Checkout">Proceed to checkout</a>
-    }
-     if(User.IsInRole("Member"))
-    {
-     <a class="order" asp-controller="ShoppingCart" asp-action="Checkout">Proceed to checkout</a>
-    }
-    }
+    <a class="order" asp-controller="ShoppingCart" asp-action="Checkout">Proceed to checkout</a>
+    @if(Context.User.Identity.IsAuthenticated){}
     @* For unknown user *@
     else
-    {<a asp-area="Identity" asp-page="/Account/Login">Login</a><span> / </span><a asp-area="Identity" asp-page="/Account/Register">Register</a>}
+    {
+        <p>Please login first!</p>
+        <a asp-area="Identity" asp-page="/Account/Login">Login</a><span> / </span><a asp-area="Identity" asp-page="/Account/Register">Register</a>}
     </div>
 </section>
 </main>
