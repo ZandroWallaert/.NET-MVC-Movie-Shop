@@ -2,7 +2,6 @@
     ViewData["Title"] = "Movies";
 }
 @model howest_movie_shop.ViewModels.Movies.MoviesViewModel
-
 <main>
     
 <section id="movieoftheday">
@@ -40,7 +39,7 @@
             </select>
     <input name="__RequestVerificationToken" type="hidden" value="CfDJ8HJnPNQk5rNIhHjl_m0Pjs6BmK1V4upO2FeVc6ZPeKAMLwluRIyHDdsyu9SR2-MbD2ygFZ8l7kVIdfHo2HezeCxWhtaz7WQHDhrlx5wpjpwDkf1JgEn3agniuoYo_Nc_JjFb4YG4qlvbMjNXZR9_5LLk9wsUW6ixC3zgTUZOHcJ_exyBDf2_ZkQvTk3WmOHV-Q" /></form>
     <div class="flexcontainer">
-        @foreach (var item in Model.Movies) {
+        @foreach (var item in @Model.Movies) {
             <article> 
             <a name="movieId" value="@item.id" asp-route-movieId="@item.id" asp-controller="Details" asp-action="Info">
                 <h3>@item.title</h3>
@@ -60,7 +59,7 @@
                     <input type="submit" 
                         value="Order" 
                         name="Order" 
-                        id="orderButton"/>
+                        id="orderButton" asp-route-id="@item.id" asp-controller="Cart" asp-action="Buy"/>
                 </div>
             <input name="__RequestVerificationToken" type="hidden" value="CfDJ8HJnPNQk5rNIhHjl_m0Pjs6BmK1V4upO2FeVc6ZPeKAMLwluRIyHDdsyu9SR2-MbD2ygFZ8l7kVIdfHo2HezeCxWhtaz7WQHDhrlx5wpjpwDkf1JgEn3agniuoYo_Nc_JjFb4YG4qlvbMjNXZR9_5LLk9wsUW6ixC3zgTUZOHcJ_exyBDf2_ZkQvTk3WmOHV-Q" /></form>
         </article>}

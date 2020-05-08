@@ -34,6 +34,7 @@ namespace howest_movie_shop.Controllers
         [Route("")]
         public IActionResult Index()
         {
+            ViewBag.ShowCart = true;
             HttpContext.Session.SetString("Movies", JsonSerializer.Serialize(service.AllMovies()));
             string movies = HttpContext.Session.GetString("Movies");
             List<Movies> movieList = JsonSerializer.Deserialize<List<Movies>>(movies);
@@ -42,7 +43,12 @@ namespace howest_movie_shop.Controllers
             string randomMovie = HttpContext.Session.GetString("RandomMovie");
             List<Movies> randomMovieList = JsonSerializer.Deserialize<List<Movies>>(randomMovie);
 
-            return View(movieHandler.CreateHomepage(movieList, randomMovieList));
+            if (HttpContext.Session.GetInt32("CartCounter") == null){
+                HttpContext.Session.SetInt32("CartCounter", 0);
+            }
+            int counter = (int)HttpContext.Session.GetInt32("CartCounter");
+
+            return View(movieHandler.CreateHomepage(movieList, randomMovieList, counter));
 
         }
         
@@ -50,16 +56,20 @@ namespace howest_movie_shop.Controllers
         [Route("[action]")]
         public IActionResult Index(string searchString, string sortKey, string sortOrder)
         {
+            ViewBag.ShowCart = true;
             string movies = HttpContext.Session.GetString("Movies");
             List<Movies> movieList = JsonSerializer.Deserialize<List<Movies>>(movies);
             string randomMovie = HttpContext.Session.GetString("RandomMovie");
             List<Movies> randomMovieList = JsonSerializer.Deserialize<List<Movies>>(randomMovie);
-            return View(movieHandler.CreateSearch(searchString, sortKey, sortOrder, movieList, randomMovieList));
+            int counter = (int)HttpContext.Session.GetInt32("CartCounter");
+
+            return View(movieHandler.CreateSearch(searchString, sortKey, sortOrder, movieList, randomMovieList, counter));
         }
 
         [Route("[action]")]
         public IActionResult Collection()
         {
+            ViewBag.ShowCart = true;
             return View();
         }
 

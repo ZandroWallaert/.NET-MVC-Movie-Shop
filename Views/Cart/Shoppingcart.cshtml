@@ -1,8 +1,7 @@
+@model howest_movie_shop.ViewModels.Movies.MoviesViewModel
 @{
     ViewData["Title"] = "Shoppingcart";
 }
-
-
 <main>
     <section id="cart">
     <div id="cartoverview">
@@ -17,20 +16,20 @@
                 </tr>
                 </thead>
                 <tbody>
+                    @foreach (var item in Model.Movies)
+                    {
                         <tr>
-                            <td>2001: A Space Odyssey.</td>
-                            <td>€ 19.90</td>
+                            <td>@item.title</td>
+                            <td>@Model.price</td>
                         </tr>
-                        <tr>
-                            <td>1917.</td>
-                            <td>€ 7.72</td>
-                        </tr>
+                    }
+
                 </tbody>
                 <tfoot>
                 <tr>
                     <td></td>
                     <td>
-                        Total:€ 27.62
+                        Total:€ @Model.sum
                     </td>
                 </tr>
                 </tfoot>

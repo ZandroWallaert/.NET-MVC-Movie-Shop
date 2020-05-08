@@ -20,10 +20,10 @@
                 <li><a asp-controller="Order" asp-action="Order">Orders</a></li>}}
                 <li><a asp-controller="Movie" asp-action="">Collection</a></li>
                 <partial name="_LoginPartial" />    
-                @if (ViewBag.ShowCart ?? true)
+                @if (ViewBag.ShowCart ?? false)
                 {
                     <li>
-                    <a class="viewcart" asp-controller="ShoppingCart" asp-action="Shoppingcart"><span>0</span>view cart
+                    <a class="viewcart" asp-controller="Cart" asp-action="Shoppingcart"><span>@Model.CartCounter</span>view cart
                     </a>
                     </li>
                 } 

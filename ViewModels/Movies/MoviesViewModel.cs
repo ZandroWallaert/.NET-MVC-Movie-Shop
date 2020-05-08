@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 
 namespace howest_movie_shop.ViewModels.Movies {
@@ -13,6 +14,9 @@ namespace howest_movie_shop.ViewModels.Movies {
         public Int32 Count { get; internal set; }
         public List<string> SortKey { get; set;}
         public List<string> SortOrder { get; set;}
+        public double price { get; set;}
+        public double sum { get; set;}
+        public Int32 CartCounter { get; set; }
     }
 
 }

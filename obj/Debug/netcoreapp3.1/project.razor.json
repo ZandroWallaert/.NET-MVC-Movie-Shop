@@ -20601,13 +20601,13 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "d:\\Desktop\\Howest Movie Shop\\howest-movie-shop\\Views\\ShoppingCart\\Shoppingcart.cshtml",
-      "TargetPath": "Views\\ShoppingCart\\Shoppingcart.cshtml",
+      "FilePath": "d:\\Desktop\\Howest Movie Shop\\howest-movie-shop\\Views\\Shared\\LayoutShop.cshtml",
+      "TargetPath": "Views\\Shared\\LayoutShop.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "d:\\Desktop\\Howest Movie Shop\\howest-movie-shop\\Views\\Shared\\LayoutShop.cshtml",
-      "TargetPath": "Views\\Shared\\LayoutShop.cshtml",
+      "FilePath": "d:\\Desktop\\Howest Movie Shop\\howest-movie-shop\\Views\\Cart\\Shoppingcart.cshtml",
+      "TargetPath": "Views\\Cart\\Shoppingcart.cshtml",
       "FileKind": "mvc"
     },
     {

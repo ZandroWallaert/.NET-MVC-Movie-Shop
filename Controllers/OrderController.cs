@@ -20,6 +20,7 @@ namespace howest_movie_shop.Controllers
         [Route("Order")]
         public IActionResult Orders()
         {
+            ViewBag.ShowCart = true;
             return View();
         }
     }

@@ -33,9 +33,11 @@ namespace howest_movie_shop.Controllers
         [Route("Details/{movieId}")]
         public IActionResult Info(long movieId)
         {
+            ViewBag.ShowCart = true;
             string movies = HttpContext.Session.GetString("Movies");
             List<Movies> movieList = JsonSerializer.Deserialize<List<Movies>>(movies);
-            return View(detailHandler.CreateInfoPage(movieId, movieList));
+            int counter = (int)HttpContext.Session.GetInt32("CartCounter");
+            return View(detailHandler.CreateInfoPage(movieId, movieList, counter));
         }
 
 

@@ -15,7 +15,7 @@ namespace howest_movie_shop.Library.Handlers
         public List<string> Queries = new List<string>();
         private IEnumerable<Movies> moviesIE;
 
-        public MoviesViewModel CreateHomepage(List<Movies> movies, List<Movies> RandomMovie)
+        public MoviesViewModel CreateHomepage(List<Movies> movies, List<Movies> RandomMovie, int counter)
         {
             moviesIE = movies;
             allMoviesCount = moviesIE.Count();
@@ -32,7 +32,8 @@ namespace howest_movie_shop.Library.Handlers
                 },
                 Movies = new List<MovieViewModel>(),
                 SortKey = service.GetSortKey(),
-                SortOrder = service.GetSortOrder()
+                SortOrder = service.GetSortOrder(),
+                CartCounter = counter
             };
 
             foreach (var movie in moviesIE)
@@ -51,7 +52,7 @@ namespace howest_movie_shop.Library.Handlers
             return page;
         }
 
-        public MoviesViewModel CreateSearch(String searchString, String sortKey, String sortOrder, List<Movies> movies, List<Movies> RandomMovie)
+        public MoviesViewModel CreateSearch(String searchString, String sortKey, String sortOrder, List<Movies> movies, List<Movies> RandomMovie, int counter)
         {
             moviesIE = movies;
             var randomMovie = RandomMovie.First();
@@ -66,7 +67,8 @@ namespace howest_movie_shop.Library.Handlers
                 },
                 Movies = new List<MovieViewModel>(),
                 SortKey = service.GetSortKey(),
-                SortOrder = service.GetSortOrder()
+                SortOrder = service.GetSortOrder(),
+                CartCounter = counter
             };
             if (searchString == null)
             {

@@ -20,20 +20,19 @@ namespace howest_movie_shop.Controllers
         [Route("Shoppingcart")]
         public IActionResult Shoppingcart()
         {
+            ViewBag.ShowCart = true;
             return View();
         }
 
         [Route("Checkout")]
         public IActionResult Checkout()
         {
-            ViewBag.ShowCart = false;
             return View();
         }
 
         [Route("Ticket")]
         public IActionResult Ticket()
         {
-            ViewBag.ShowCart = false;
             return View();
         }
 

@@ -23,6 +23,7 @@ namespace howest_movie_shop.Areas.Identity.Pages.Account
         private readonly UserManager<IdentityUser> _userManager;
         private readonly ILogger<RegisterModel> _logger;
         private readonly IEmailSender _emailSender;
+        public Int32 CartCounter { get; set; }
         private readonly string _defaultRole = "Member";
 
         public RegisterModel(

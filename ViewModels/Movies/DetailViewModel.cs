@@ -13,6 +13,7 @@ namespace howest_movie_shop.ViewModels.Movies
         public String plot { get; set; }
         public decimal rating { get; set; }
         public List<howest_movie_lib.Library.Models.Persons> Actors { get; set; }
+        public Int32 CartCounter { get; set; }
     }
 
 }

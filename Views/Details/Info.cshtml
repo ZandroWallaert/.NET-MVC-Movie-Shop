@@ -18,7 +18,7 @@
                 <input type="submit" 
                     value="Order" 
                     name="Order" 
-                    id="orderButton"/>
+                    id="orderButton" asp-route-id="@Model.movieId" asp-controller="Cart" asp-action="Buy"/>
             </div></form>
         <br/>
         <p><span>Rating <strong>@Model.rating</strong></span></p>

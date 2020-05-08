@@ -181,8 +181,8 @@ D:\Desktop\Howest Movie Shop\howest-movie-shop\obj\Debug\netcoreapp3.1\Razor\Are
 D:\Desktop\Howest Movie Shop\howest-movie-shop\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.Google.dll
 D:\Desktop\Howest Movie Shop\howest-movie-shop\obj\Debug\netcoreapp3.1\Razor\Views\Movie\Index.cshtml.g.cs
 D:\Desktop\Howest Movie Shop\howest-movie-shop\obj\Debug\netcoreapp3.1\Razor\Views\Details\Info.cshtml.g.cs
-D:\Desktop\Howest Movie Shop\howest-movie-shop\obj\Debug\netcoreapp3.1\Razor\Views\ShoppingCart\Checkout.cshtml.g.cs
-D:\Desktop\Howest Movie Shop\howest-movie-shop\obj\Debug\netcoreapp3.1\Razor\Views\ShoppingCart\Ticket.cshtml.g.cs
 D:\Desktop\Howest Movie Shop\howest-movie-shop\obj\Debug\netcoreapp3.1\Razor\Views\Order\Orders.cshtml.g.cs
 D:\Desktop\Howest Movie Shop\howest-movie-shop\obj\Debug\netcoreapp3.1\Razor\Views\Shared\LayoutShop.cshtml.g.cs
-D:\Desktop\Howest Movie Shop\howest-movie-shop\obj\Debug\netcoreapp3.1\Razor\Views\ShoppingCart\Shoppingcart.cshtml.g.cs
+D:\Desktop\Howest Movie Shop\howest-movie-shop\obj\Debug\netcoreapp3.1\Razor\Views\Cart\Shoppingcart.cshtml.g.cs
+D:\Desktop\Howest Movie Shop\howest-movie-shop\obj\Debug\netcoreapp3.1\Razor\Views\ShoppingCart\Checkout.cshtml.g.cs
+D:\Desktop\Howest Movie Shop\howest-movie-shop\obj\Debug\netcoreapp3.1\Razor\Views\ShoppingCart\Ticket.cshtml.g.cs
