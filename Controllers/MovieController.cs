@@ -25,6 +25,7 @@ namespace howest_movie_shop.Controllers
         private readonly ILogger<MovieController> _logger;
         private MovieHandler movieHandler = new MovieHandler();
         private SessionService service = new SessionService();
+        private List<string> querysAndSorts = new List<string>();
 
         public MovieController(ILogger<MovieController> logger)
         {
@@ -36,6 +37,7 @@ namespace howest_movie_shop.Controllers
         {
             ViewBag.ShowCart = true;
             HttpContext.Session.SetString("Movies", JsonSerializer.Serialize(service.AllMovies()));
+            HttpContext.Session.SetString("OrderedMovies", JsonSerializer.Serialize(service.AllMovies().OrderBy(movie => movie.Title)));
             string movies = HttpContext.Session.GetString("Movies");
             List<Movies> movieList = JsonSerializer.Deserialize<List<Movies>>(movies);
 
@@ -57,6 +59,10 @@ namespace howest_movie_shop.Controllers
         public IActionResult Index(string searchString, string sortKey, string sortOrder)
         {
             ViewBag.ShowCart = true;
+
+            querysAndSorts.Add(searchString+","+sortKey+","+sortOrder);
+            HttpContext.Session.SetString("QueryAndSorts", JsonSerializer.Serialize(querysAndSorts));
+
             string movies = HttpContext.Session.GetString("Movies");
             List<Movies> movieList = JsonSerializer.Deserialize<List<Movies>>(movies);
             string randomMovie = HttpContext.Session.GetString("RandomMovie");
@@ -79,37 +85,6 @@ namespace howest_movie_shop.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
-
-      /*   private List<string> StoreSearchQuery(string query)
-    {
-        // Add the search string to the session state to remember it.
-        List<string> previousQueries = GetPreviousQueries();
-
-        if (!previousQueries.Contains(query))
-        {
-            previousQueries.Add(query);
-        }
-
-        // Overwrite the current searchQueries with the new results.
-        HttpContext.Session.SetString("searchQueries", JsonSerializer.Serialize(previousQueries));
-
-        return previousQueries;
-    }
-  
-    private List<string> GetPreviousQueries()
-    {
-        // Get the raw json from the session store.
-        string previousQueriesJson = HttpContext.Session.GetString("searchQueries");
-        List<string> previousQueries = new List<string>();
-
-        if (!string.IsNullOrEmpty(previousQueriesJson))
-        {
-            // When the searchQueries key is available deserialize into a list of strings.
-            previousQueries = JsonSerializer.Deserialize<List<string>>(previousQueriesJson);
-        }
-
-        return previousQueries;
-    }  */
 
     }
 }
