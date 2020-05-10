@@ -17,11 +17,13 @@ namespace howest_movie_shop.Controllers
     [Route("[controller]")]
     public class OrderController : Controller
     {
+        private OrdersHandler orderHandler = new OrdersHandler();
+
         [Route("Order")]
         public IActionResult Orders()
         {
-            ViewBag.ShowCart = true;
-            return View();
+            ViewBag.ShowCart = false;
+            return View(orderHandler.CreatePage());
         }
     }
 }

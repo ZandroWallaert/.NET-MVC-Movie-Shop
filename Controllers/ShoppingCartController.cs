@@ -15,6 +15,8 @@ using Microsoft.AspNetCore.Session;
 using System.Text.Json;
 using Library.Services;
 using howest_movie_lib.Library.Models;
+using System.Security.Claims;
+using System.Numerics;
 
 namespace howest_movie_shop.Controllers
 {
@@ -22,6 +24,8 @@ namespace howest_movie_shop.Controllers
     public class ShoppingCartController : Controller
     {
         private TicketHandler ticketHandler = new TicketHandler();
+        private OrdersHandler ordersHandler = new OrdersHandler();
+        List<howest_movie_shop.ViewModels.Movies.MovieViewModel> Movies = new List<MovieViewModel>();
 
         [Route("Shoppingcart")]
         public IActionResult Shoppingcart()
@@ -31,15 +35,29 @@ namespace howest_movie_shop.Controllers
         }
 
         [Route("Checkout")]
-        public IActionResult Checkout()
+        public IActionResult Checkout(List<howest_movie_shop.ViewModels.Movies.MovieViewModel> movies)
         {
+            Movies = movies;
             return View();
         }
-        
+
         [HttpPost]
         [Route("Ticket")]
         public IActionResult Ticket(string name)
         {
+            var claimsIdentity = (ClaimsIdentity)this.User.Identity;
+            var claim = claimsIdentity.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier);
+            string userId = claim.Value.ToString();
+            string digits = new String(userId.Where(Char.IsDigit).ToArray());
+            
+            ordersHandler.AddOrder(Convert.ToInt64(digits.Substring(0, 10)), DateTime.Now, Request.Form["Street"], Request.Form["City"], Request.Form["Postalcode"], Request.Form["Country"]);
+            ordersHandler.AddCustomer(digits.Substring(0, 10), Request.Form["Name"], Request.Form["Street"], Request.Form["City"], Request.Form["Postalcode"], Request.Form["Country"]);
+            foreach (var item in Movies)
+            {
+                double price = item.price;
+                ordersHandler.AddOrderDetail(Convert.ToInt32(item.id), Convert.ToDecimal(price));
+            }
+            Console.WriteLine(Movies);
             string radioResult = Request.Form["PaymentMethod"];
             HttpContext.Session.SetString("Cart", "");
             HttpContext.Session.SetInt32("CartCounter", 0);

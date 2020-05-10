@@ -431,6 +431,39 @@ header nav a#manage{
   margin: 0 10px;
 }
 
+#login{
+  font-size: x-large;
+}
+
+#ticket{
+  font-size: x-large;
+  margin-left: 15%;
+}
+
+.pb-3 h1{
+  font-size: x-large;
+  margin-bottom: 2%;
+}
+
+#registerMain{
+  font-size: x-large;
+  margin-left: 10%;
+  margin-bottom: 5%;
+}
+
+#order{
+  font-size: x-large;
+  margin-left: 15%;
+}
+
+#orderTitle{
+  margin-bottom: 5%;
+  font-size: xxx-large;
+}
+
+#orderDelete{
+  margin-top: 5%;
+}
 
 #orders{
   font-size: 1.5rem;

@@ -1,12 +1,23 @@
+@model howest_movie_shop.ViewModels.Orders.OrdersViewModel
 @{
     ViewData["Title"] = "Orders";
 }
 
 
-<main>
+<main id="order">
+<h1 id="orderTitle">Orders:</h1>
+                    
+                        <p>ID: @Model.OrderId</p>
+                        <p>Date ordered: @Model.OrderDate</p>
+                        <p>Movies ordered: </p>
+                        @foreach (var title in @Model.MovieTitles)
+                        {
+                            <p>@title</p>
+                        }
+                        <p>@Model.TotalPrice</p>
+                        <p>@Model.CustomerName</p>
+                        <p>@Model.Address</p>
 
-
-
-
-
+                        <p id="orderDelete"><a href="#">Delete record</a></p>
+                    
 </main>

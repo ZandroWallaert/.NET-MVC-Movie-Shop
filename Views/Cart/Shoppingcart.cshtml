@@ -21,7 +21,7 @@
                     <p>Please order something to continue</p>
                     <a asp-controller="Movie" asp-action="">Home</a>
                 }
-                    @foreach (var item in Model.Movies)
+                    @foreach (var item in @Model.Movies)
                     {
                         <tr>
                             <td>@item.title</td>
@@ -40,8 +40,8 @@
                 </tfoot>
             </table>
         </div>
-    <a class="order" asp-controller="ShoppingCart" asp-action="Checkout">Proceed to checkout</a>
-    @if(Context.User.Identity.IsAuthenticated){}
+        @if(Context.User.Identity.IsAuthenticated){
+    <a class="order" asp-route-name="@Model.Movies" asp-controller="ShoppingCart" asp-action="Checkout">Proceed to checkout</a>}
     @* For unknown user *@
     else
     {

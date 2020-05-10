@@ -43,7 +43,8 @@ namespace howest_movie_shop.Library.Handlers
                     title = movie.Title,
                     id = movie.Id,
                     year = movie.Year,
-                    coverUrl = movie.CoverUrl
+                    coverUrl = movie.CoverUrl,
+                    price = 9.99
                 };
 
                 page.Movies.Add(movieViewModel);
@@ -63,7 +64,8 @@ namespace howest_movie_shop.Library.Handlers
                     title = randomMovie.Title,
                     id = randomMovie.Id,
                     year = randomMovie.Year,
-                    coverUrl = randomMovie.CoverUrl
+                    coverUrl = randomMovie.CoverUrl,
+                    price = 9.99
                 },
                 Movies = new List<MovieViewModel>(),
                 SortKey = service.GetSortKey(),
@@ -82,7 +84,8 @@ namespace howest_movie_shop.Library.Handlers
                             title = movie.Title,
                             id = movie.Id,
                             year = movie.Year,
-                            coverUrl = movie.CoverUrl
+                            coverUrl = movie.CoverUrl,
+                            price = 9.99
                         };
                         searchPage.Movies.Add(movieViewModel);
                         searchPage.Count = moviesIE.Count();
@@ -97,7 +100,8 @@ namespace howest_movie_shop.Library.Handlers
                             title = movie.Title,
                             id = movie.Id,
                             year = movie.Year,
-                            coverUrl = movie.CoverUrl
+                            coverUrl = movie.CoverUrl,
+                            price = 9.99
                         };
 
                         searchPage.Movies.Add(movieViewModel);
@@ -113,7 +117,8 @@ namespace howest_movie_shop.Library.Handlers
                             title = movie.Title,
                             id = movie.Id,
                             year = movie.Year,
-                            coverUrl = movie.CoverUrl
+                            coverUrl = movie.CoverUrl,
+                            price = 9.99
                         };
 
                         searchPage.Movies.Add(movieViewModel);
@@ -129,7 +134,8 @@ namespace howest_movie_shop.Library.Handlers
                             title = movie.Title,
                             id = movie.Id,
                             year = movie.Year,
-                            coverUrl = movie.CoverUrl
+                            coverUrl = movie.CoverUrl,
+                            price = 9.99
                         };
 
                         searchPage.Movies.Add(movieViewModel);
@@ -149,7 +155,8 @@ namespace howest_movie_shop.Library.Handlers
                             title = movie.Title,
                             id = movie.Id,
                             year = movie.Year,
-                            coverUrl = movie.CoverUrl
+                            coverUrl = movie.CoverUrl,
+                            price = 9.99
                         };
 
                         searchPage.Movies.Add(movieViewModel);
@@ -165,7 +172,8 @@ namespace howest_movie_shop.Library.Handlers
                             title = movie.Title,
                             id = movie.Id,
                             year = movie.Year,
-                            coverUrl = movie.CoverUrl
+                            coverUrl = movie.CoverUrl,
+                            price = 9.99
                         };
 
                         searchPage.Movies.Add(movieViewModel);
@@ -181,7 +189,8 @@ namespace howest_movie_shop.Library.Handlers
                             title = movie.Title,
                             id = movie.Id,
                             year = movie.Year,
-                            coverUrl = movie.CoverUrl
+                            coverUrl = movie.CoverUrl,
+                            price = 9.99
                         };
 
                         searchPage.Movies.Add(movieViewModel);
@@ -197,7 +206,8 @@ namespace howest_movie_shop.Library.Handlers
                             title = movie.Title,
                             id = movie.Id,
                             year = movie.Year,
-                            coverUrl = movie.CoverUrl
+                            coverUrl = movie.CoverUrl,
+                            price = 9.99
                         };
 
                         searchPage.Movies.Add(movieViewModel);
