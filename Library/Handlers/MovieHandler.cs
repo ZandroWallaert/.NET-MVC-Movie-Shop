@@ -89,6 +89,7 @@ namespace howest_movie_shop.Library.Handlers
                         };
                         searchPage.Movies.Add(movieViewModel);
                         searchPage.Count = moviesIE.Count();
+                        searchPage.searchQuery = "";
                     }
                 }
                 if (sortKey.Equals("year") && sortOrder.Equals("asc"))
@@ -106,6 +107,7 @@ namespace howest_movie_shop.Library.Handlers
 
                         searchPage.Movies.Add(movieViewModel);
                         searchPage.Count = moviesIE.Count();
+                        searchPage.searchQuery = "";
                     }
                 }
                 if (sortKey.Equals("title") && sortOrder.Equals("desc"))
@@ -123,6 +125,7 @@ namespace howest_movie_shop.Library.Handlers
 
                         searchPage.Movies.Add(movieViewModel);
                         searchPage.Count = moviesIE.Count();
+                        searchPage.searchQuery = "";
                     }
                 }
                 if (sortKey.Equals("year") && sortOrder.Equals("desc"))
@@ -140,6 +143,7 @@ namespace howest_movie_shop.Library.Handlers
 
                         searchPage.Movies.Add(movieViewModel);
                         searchPage.Count = moviesIE.Count();
+                        searchPage.searchQuery = "";
                     }
                 }
             }
@@ -161,6 +165,7 @@ namespace howest_movie_shop.Library.Handlers
 
                         searchPage.Movies.Add(movieViewModel);
                         searchPage.Count = moviesIE.OrderBy(i => i.Title).Where(s => s.Title.ToLower().Contains(searchString)).Count();
+                        searchPage.searchQuery = searchString;
                     }
                 }
                 if (sortKey.Equals("year") && sortOrder.Equals("asc"))
@@ -178,6 +183,7 @@ namespace howest_movie_shop.Library.Handlers
 
                         searchPage.Movies.Add(movieViewModel);
                         searchPage.Count = moviesIE.OrderBy(i => i.Year).Where(s => s.Title.ToLower().Contains(searchString)).Count();
+                        searchPage.searchQuery = searchString;
                     }
                 }
                 if (sortKey.Equals("title") && sortOrder.Equals("desc"))
@@ -195,6 +201,7 @@ namespace howest_movie_shop.Library.Handlers
 
                         searchPage.Movies.Add(movieViewModel);
                         searchPage.Count = moviesIE.OrderByDescending(i => i.Title).Where(s => s.Title.ToLower().Contains(searchString)).Count();
+                        searchPage.searchQuery = searchString;
                     }
                 }
                 if (sortKey.Equals("year") && sortOrder.Equals("desc"))
@@ -212,6 +219,7 @@ namespace howest_movie_shop.Library.Handlers
 
                         searchPage.Movies.Add(movieViewModel);
                         searchPage.Count = moviesIE.OrderByDescending(i => i.Year).Where(s => s.Title.ToLower().Contains(searchString)).Count();
+                        searchPage.searchQuery = searchString;
                     }
                 }
             }

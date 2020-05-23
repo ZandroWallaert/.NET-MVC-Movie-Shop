@@ -28,7 +28,7 @@
     <p>Stay home, We care about your health.</p>
     <form asp-controller="Movie" asp-action="Index">
         <button class="order" type="submit" value="Search">Search</button>
-        <input id="SearchValue" type="search" name="searchString" />
+        <input id="SearchValue" type="search" name="searchString" value="@Model.searchQuery"/>
         <label>Sort items by</label>
             <select id="SortKey" name="sortKey">
                         <option value="@Model.SortKey[0]">@Model.SortKey[0]</option>

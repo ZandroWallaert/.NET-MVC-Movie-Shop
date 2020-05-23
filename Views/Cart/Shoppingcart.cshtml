@@ -7,6 +7,8 @@
     <div id="cartoverview">
         <h2>Your shopping cart</h2>
         <p>You have selected the following movies so far:</p>
+        @if (ViewBag.ShowDefaultInfo == true)
+                {
         <div class="items">
             <table>
                 <thead>
@@ -16,11 +18,36 @@
                 </tr>
                 </thead>
                 <tbody>
-                    @if (ViewBag.ShowDefaultInfo ?? false)
-                {
                     <p>Please order something to continue</p>
                     <a asp-controller="Movie" asp-action="">Home</a>
-                }
+                </tbody>
+                <tfoot>
+                <tr>
+                    <td></td>
+                    <td>
+                        Total:€ @Model.sum
+                    </td>
+                </tr>
+                </tfoot>
+            </table>
+        </div>
+        @if(Context.User.Identity.IsAuthenticated){}
+        @* For unknown user *@
+    else
+    {
+        <p>Please login first!</p>
+        <a asp-area="Identity" asp-page="/Account/Login">Login</a><span> / </span><a asp-area="Identity" asp-page="/Account/Register">Register</a>}}
+        @if (ViewBag.ShowDefaultInfo != true)
+        {
+            <div class="items">
+            <table>
+                <thead>
+                <tr>
+                    <th>Movie</th>
+                    <th>Price</th>
+                </tr>
+                </thead>
+                <tbody>                
                     @foreach (var item in @Model.Movies)
                     {
                         <tr>
@@ -28,7 +55,6 @@
                             <td>@Model.price</td>
                         </tr>
                     }
-
                 </tbody>
                 <tfoot>
                 <tr>
@@ -41,12 +67,12 @@
             </table>
         </div>
         @if(Context.User.Identity.IsAuthenticated){
-    <a class="order" asp-route-name="@Model.Movies" asp-controller="ShoppingCart" asp-action="Checkout">Proceed to checkout</a>}
-    @* For unknown user *@
+    <a class="order" asp-route-name="@Model.Movies" asp-controller="ShoppingCart" asp-action="Checkout">Proceed to checkout</a>
+    }@* For unknown user *@
     else
     {
         <p>Please login first!</p>
-        <a asp-area="Identity" asp-page="/Account/Login">Login</a><span> / </span><a asp-area="Identity" asp-page="/Account/Register">Register</a>}
+        <a asp-area="Identity" asp-page="/Account/Login">Login</a><span> / </span><a asp-area="Identity" asp-page="/Account/Register">Register</a>}}
     </div>
 </section>
 </main>
